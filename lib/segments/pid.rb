@@ -4,14 +4,16 @@ class HL7::Message::Segment::PID < HL7::Message::Segment
   weight 1
   has_children [:NK1,:NTE,:PV1,:PV2]
   add_field :set_id
-  add_field :patient_id
+  add_field :patient_id do |patient_id|
+    HL7::CompositeField::CX.new(patient_id)    
+  end
   add_field :patient_id_list
   add_field :alt_patient_id
   add_field :patient_name do |name|
     HL7::CompositeField::XPN.new(name)
   end
   add_field :mother_maiden_name
-  add_field :patient_dob
+  add_field :patient_dob, :type=>"dtm"
   add_field :admin_sex do |sex|
     unless /^[FMOUAN]$/.match(sex) || sex == nil || sex == ""
       raise HL7::InvalidDataError.new( "bad administrative sex value (not F|M|O|U|A|N)" )

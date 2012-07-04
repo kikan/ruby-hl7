@@ -733,7 +733,7 @@ class HL7::CompositeField
     field_blk = nil
     idx = name # assume we've gotten a fixnum
     unless name.kind_of?( Fixnum )
-      fld_info = self.class.fields[ name ]
+      fld_info = self.class.fields[ name.to_sym ]
       idx = fld_info[:idx].to_i
       field_blk = fld_info[:blk]
     end
