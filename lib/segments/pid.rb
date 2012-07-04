@@ -7,7 +7,9 @@ class HL7::Message::Segment::PID < HL7::Message::Segment
   add_field :patient_id
   add_field :patient_id_list
   add_field :alt_patient_id
-  add_field :patient_name
+  add_field :patient_name do |name|
+    HL7::CompositeField::XPN.new(name)
+  end
   add_field :mother_maiden_name
   add_field :patient_dob
   add_field :admin_sex do |sex|
