@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-hl7}
-  s.version = "1.0.3"
+  s.version = "1.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Mark Guzman"]
-  s.date = %q{2011-01-25}
+  s.authors = ["Mark Guzman", "Christian Pennaforte"]
+  s.date = %q{2012-07-03}
   s.description = %q{A simple library to parse and generate HL7 2.x messages}
   s.email = %q{ruby-hl7@googlegroups.com}
   s.extra_rdoc_files = [
@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     "lib/ruby-hl7.rb",
+     "lib/segments/aig.rb",
+     "lib/segments/ail.rb",
      "lib/segments/err.rb",
      "lib/segments/evn.rb",
      "lib/segments/msa.rb",
@@ -33,8 +35,11 @@ Gem::Specification.new do |s|
      "lib/segments/pv2.rb",
      "lib/segments/qrd.rb",
      "lib/segments/qrf.rb",
+     "lib/segments/rgs.rb",
      "lib/segments/sft.rb",
      "lib/segments/spm.rb",
+     "lib/segments/xpn.rb",
+     "lib/segments/zvi.rb",
      "lib/string.rb",
      "lib/test/hl7_messages.rb",
      "test_data/adt_a01.hl7",
